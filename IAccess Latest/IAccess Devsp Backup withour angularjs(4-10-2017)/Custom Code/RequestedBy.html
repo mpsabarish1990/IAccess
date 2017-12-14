@@ -1,0 +1,156 @@
+﻿<div class="container">
+    <h2>Requested By</h2>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default" id="CollapseID">
+            
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+</div>
+
+
+
+
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #31A4F7;
+    color: white;
+}
+</style>
+
+<!--<div class="panel-body">   <div class="panel-group" id="accordion1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2" aria-expanded="false" class="collapsed">Collapsible Group 1</a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                            </div>
+                        </div>
+                    </div></div>-->
+<script>
+    var requestUri = "";
+    var Header_Body = "";
+    var bindhtml = "";
+    var bindRequetedByHTML = "";
+    var listDisplayName = "ITRequest";
+    var bindsubhtml = "";
+
+
+    jQuery(document).ready(function () {
+        ReportsRequestType();
+
+    });
+
+    function ReportsRequestType() {
+        requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Id,Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type";
+        Header_Body = {
+            "Accept": "application/json;odata=verbose",
+            "content-type": "application/json; odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            "X-HTTP-Method": "GET",
+            //"If-Match": "*"
+        }
+        $.ajax(
+               {
+                   url: requestUri,
+                   async: false,
+                   type: "GET",
+                   headers: Header_Body,
+                   success: function (data) {
+
+
+                       if (data.d.results) {
+
+                           for (var i = 0; i < data.d.results.length; i++) {
+
+
+
+
+                               bindhtml += '                       <div class="panel-heading">                                                                                   ';
+                               bindhtml += '        <h4 class="panel-title">                                                                                                     ';
+                               bindhtml += '            <a data-toggle="collapse" data-parent="#accordion" href="#collapseMain' + data.d.results[i].ID + '" aria-expanded="true" class="">' + data.d.results[i].Requester.Title + '</a>      ';
+                               bindhtml += '        </h4>                                                                                                                        ';
+                               bindhtml += '    </div>                                                                                                                           ';
+                               bindhtml += '    <div id="collapseMain' + data.d.results[i].ID + '" class="panel-collapse collapse" aria-expanded="true" style="">                                               ';
+                               bindhtml += '<div class="panel-body">';
+                               bindhtml += '    <div> ';
+                               bindhtml += '  <table id="Requesttype_table" class="display" cellspacing="0" width="100%">';
+                               bindhtml += '        <thead>                                                                                           ';
+                               bindhtml += '            <tr>                                                                                          ';
+                               bindhtml += '                 <th>Requester</th>      ';
+                               bindhtml += '                 <th>Manager</th>        ';
+                               bindhtml += '                 <th>Request Type</th>   ';
+                               bindhtml += '                 <th>Request Id</th>     ';
+                               bindhtml += '            </tr>                                                                                         ';
+                               bindhtml += '        </thead>                                                                                          ';
+                               bindhtml += '                                                                                                          ';
+                               bindhtml += '        <tbody>                                                                                           ';
+                               bindhtml += '<td>' + data.d.results[i].Requester.Title + '</td>';
+                               bindhtml += '<td>' + data.d.results[i].anager.Title + '</td>';
+                               bindhtml += '<td>' + data.d.results[i].Request_x0020_Type.Title + '</td>';
+                               bindhtml += '<td>' + data.d.results[i].RequestId; + '</td>';
+                               bindhtml += '        </tbody>                                                                                          ';
+                               bindhtml += '    </table>                                                                                              ';
+                               bindhtml += '    </div> ';
+                               bindhtml += '    </div> ';
+                               bindhtml += '    </div>                                                                                                                           ';
+
+
+
+
+                           }
+
+                           $('#CollapseID').html(bindhtml);
+
+
+                       }
+
+
+                   },
+                   error: function (err) {
+                       console.log("ITRequest List Item Error Message: " + JSON.stringify(err));
+                   }
+               });
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+﻿
+<div id="Reportsbinds"></div>
+<h2>Reports</h2>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+
+
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Request Type</a>
+            </h4>
+            <div id="collapse1" class="panel-collapse collapse">
+            </div>
+        </div>
+
+
+
+
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Requested By</a>
+            </h4>
+            <div id="collapse2" class="panel-collapse collapse">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var requestUri = "";
+        var Header_Body = "";
+        var bindhtml = "";
+        var bindRequetedByHTML = "";
+        var listDisplayName = "ITRequest";
+
+
+        jQuery(document).ready(function () {
+            Reports();
+           
+        });
+
+        function Reports() {
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,Request_x0020_Type/Id,Request_x0020_Type/Title&$expand=Requester,Request_x0020_Type";
+            Header_Body = {
+                "Accept": "application/json;odata=verbose",
+                "content-type": "application/json; odata=verbose",
+                "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+                "X-HTTP-Method": "GET",
+                //"If-Match": "*"
+            }
+            $.ajax(
+                   {
+                       url: requestUri,
+                       async: false,
+                       type: "GET",
+                       headers: Header_Body,
+                       success: function (data) {
+
+
+                           if (data.d.results) {
+
+                               for (var i = 0; i < data.d.results.length; i++) {
+
+                                   bindhtml += '<div class="panel-body">' + data.d.results[i].Request_x0020_Type.Title + '</div>';
+
+                                   bindRequetedByHTML += '<div class="panel-body">' + data.d.results[i].Requester.Title + '</div>';
+
+                               }
+
+                               $('#collapse1').html(bindhtml);
+                               $('#collapse2').html(bindRequetedByHTML);
+                           }
+
+
+                       },
+                       error: function (err) {
+                           console.log("ITRequest List Item Error Message: " + JSON.stringify(err));
+                       }
+                   });
+
+        }
+
+
+    </script>

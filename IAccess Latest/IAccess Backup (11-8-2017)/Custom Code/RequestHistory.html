@@ -1,0 +1,42 @@
+﻿<link type="text/css" href="../SiteAssets/iAccess/StyleSheets/bootstrap.min.css" rel="stylesheet" />
+
+<link type="text/css" href="../SiteAssets/iAccess/StyleSheets/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="../SiteAssets/iAccess/StyleSheets/style.css" rel="stylesheet">
+<link type="text/css" href="../SiteAssets/iAccess/StyleSheets/package/mdl/material.css" rel="stylesheet">
+<script type="text/javascript" src="../SiteAssets/iAccess/Scripts/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="../SiteAssets/iAccess/Scripts/handlebars-v4.0.10.js"></script>
+
+<script src="../SiteAssets/iAccess/Scripts/moment.min.js"></script>
+<script src="../SiteAssets/iAccess/Stylesheets/package/mdl/material.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../SiteAssets/iAccess/Scripts/RequestHistory.js"></script>
+<script type="text/javascript" src="../SiteAssets/iAccess/Scripts/camljs.js"></script>
+<script type="text/javascript" src="../SiteAssets/iAccess/Scripts/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../SiteAssets/iAccess/Scripts/dataTables.bootstrap.min.js"></script>
+
+
+
+<h4 class="main_title"><span>Requests History</span></h4>
+    <table width="100%"  class="table table-responsive table-bordered table-striped  commentsContainer">
+        <thead>
+        <th>Sno</th>
+        <th>Performed by</th>
+        <th>Performed On</th>
+        <th>Action taken</th>
+       
+        </thead>
+        <tbody id="commentsContainer">
+            <script id="pastclearance-template" type="text/x-handlebars-template">
+               
+            {{#each items}}
+            <tr>
+                <td>{{Index}}</td>
+                <td>{{MainPeoplePicker CommentedBy}}</td>
+                <td>{{FormatDate CommentedOn}}</td>
+                <td>{{ActionTaken}}</td>
+               
+            </tr>
+            {{/each}}
+                 </script>
+                
+        </tbody>
+    </table>

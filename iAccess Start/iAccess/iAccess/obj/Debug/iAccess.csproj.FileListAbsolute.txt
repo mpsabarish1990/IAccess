@@ -1,0 +1,12 @@
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\DRL.UPPMApplication\bin\Debug\iAccess.dll
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\DRL.UPPMApplication\bin\Debug\iAccess.pdb
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\DRL.UPPMApplication\obj\Debug\iAccess.dll
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\DRL.UPPMApplication\obj\Debug\iAccess.pdb
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\iAccess\bin\Debug\iAccess.dll
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\iAccess\bin\Debug\iAccess.pdb
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\iAccess\obj\Debug\iAccess.dll
+C:\Users\Administrator.SERVER\Desktop\TillidApps\iAccess\iAccess\obj\Debug\iAccess.pdb
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\iAccess\iAccess\bin\Debug\iAccess.dll
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\iAccess\iAccess\bin\Debug\iAccess.pdb
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\iAccess\iAccess\obj\Debug\iAccess.dll
+C:\Users\devadmin\Documents\Visual Studio 2012\Projects\iAccess\iAccess\obj\Debug\iAccess.pdb

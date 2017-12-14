@@ -1,0 +1,506 @@
+<link href="../SiteAssets/iAccess/StyleSheets/package/mldicons/material-icons.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/animate.min.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap-select.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/package/mdl/material.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/fonts/font.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/editor.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/table.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/toastr.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/style.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/helper.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/introjs.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap-datepicker3.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/CheckBox.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/fixedHeader.dataTables.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+
+<script src="../SiteAssets/iAccess/Stylesheets/package/mdl/material.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/spscript.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/toastr.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/editor.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<!--<script src="../SiteAssets/iAccess/Scripts/sppeoplepicker.js" type="text/javascript"></script>-->
+<script src="../SiteAssets/iAccess/Scripts/handlebars-v4.0.5.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/Global.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/intro.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/date.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/common.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/camljs.js" type="text/javascript"></script>
+<!--<script src="../SiteAssets/iAccess/Scripts/NewRequest.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="../_layouts/15/autofill.js"></script>
+<script type="text/javascript" src="../_layouts/15/1033/strings.js"></script>
+<script type="text/javascript" src="../_layouts/15/clientforms.js">  </script>
+<script type="text/javascript" src="../_layouts/15/clientpeoplepicker.js"></script>
+<script type="text/javascript" src="../_layouts/15/clienttemplates.js">  </script>
+
+<div id="div_newform">
+<div class="cssload-container">
+    <div class="cssload-speeding-wheel">
+    </div>
+</div>
+<div class="">
+    <h4 class="main_title"><span>Search</span></h4>
+    <div class="mdl-cell--12-col">
+        <div class="alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert" id="staticInfoContainer">
+            <strong></strong>
+        </div>
+    </div>
+
+    <main class="mdl-layout__content">
+            <div action="#" class="horizontal-form" id="">
+                <div class="mdl-grid mdl-color--white mdl-shadow--2dp">
+                    
+                    <div class="mdl-cell--6-col">
+
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Employee / User-Id<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <div id="requesterID"></div>
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Manager <span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                               <div id="ManagerID"></div>
+                               <label class="mdl-textfield__label"  for="sample1" id="peopleManager">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="mdl-cell--6-col">
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request Type<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20" >
+                                <select id="drpRequesttype" class="form-control"></select>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request Id<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                 <textarea class="form-control" id="txtuniqueid" maxlength="4000"></textarea>
+                                 <label class="mdl-textfield__label" for="sample1">&nbsp;</label>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--12-col ButtonAction">
+                        <div class="mdl-js-textfield">
+                            <label id="btnSearch" for="Search" class="mdl-button mdl-js-button blue-bg-100"></label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         </main>
+
+</div>
+<!--For Confirmation Modal Window-->
+
+<div class="modal fade" id="ConfirmationModal" role="dialog" id="">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Submit Request
+                </h4>
+            </div>
+            <div class="modal-body" style="padding: 30px;">
+                <span>Are you sure do you want to proceed?</span>
+            </div>
+            <div class="modal-footer">
+                <a type="button" style="cursor: pointer;" id="BtnSubmitConfirmed" class="btn btn-info">Yes</a>
+                <a type="button" style="cursor: pointer;" id="btnNo" data-dismiss="modal" class="btn btn-default">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="div_Search" style="display:none">
+<h4>Search Results</h4>
+							<div>          
+								
+								<table>
+									<thead>
+										<tr>
+											<th>Requester</th>
+											<th>Manager</th>
+											<th>Request Type</th>
+                                            <th>Request Id</th>
+										</tr>
+									</thead>
+									<tbody id="SearchresultsBind">
+		                          </tbody>
+								</table>
+							</div>
+    </div>
+
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #31A4F7;
+    color: white;
+}
+</style>
+
+
+<script>
+
+    var listDisplayName = "ITRequest";
+    var Requester_entry = "";
+    var Manager_entry = "";
+    var Comments_entry = "";
+    var Status_entry = "";
+    var RequestType_Entry = "";
+    var RequestFor_entry = "";
+    var Login_Name_entry = "";
+    var uniqueid_value = "";
+
+    var ByRequester = "";
+    var ByManager = "";
+    var ByRequesttype = "";
+    var ByReqestid = "";
+  
+
+    jQuery(document).ready(function () {
+
+        initializePeoplePicker('requesterID');
+        initializePeoplePicker('ManagerID');
+        DrpRequesttype();
+
+    });
+
+
+    $("#btnSearch").click(function () {
+        $("#div_Search").show();
+        GettingvaluesInput();
+        SearchBindtable();
+        console.log(Requester_entry);
+        console.log(Manager_entry);
+        console.log(RequestType_Entry);
+        console.log(Unique_Id);
+    });
+
+
+    function onQueryFailed(sender, args) {
+        //$.hideLoader();
+        $.showError(args.get_message() + '\n' + args.get_stackTrace());
+    }
+
+    function GettingvaluesInput() {
+
+        getUserInfo('requesterID');
+        getUserInfo('ManagerID');
+        Unique_Id = $('#txtuniqueid').val();
+        RequestType_Entry = $("#drpRequesttype option:selected").val();
+    }
+
+    function SearchBindtable() {
+        
+
+        var requestUri = "";
+        var Header_Body = "";
+        var bindhtml = "";
+
+        if (Requester_entry != "" && Manager_entry == "" && RequestType_Entry == "Select" && Unique_Id == "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Requester/Id eq '" + Requester_entry + "'";
+        }
+        else if (Requester_entry == "" && Manager_entry != "" && RequestType_Entry == "Select" && Unique_Id == "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=anager/Id eq '" + Manager_entry + "'";
+        }
+        else if (Requester_entry == "" && Manager_entry == "" && RequestType_Entry != "Select" && Unique_Id == "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Request_x0020_Type/Id eq '" + RequestType_Entry + "'";
+        }
+        else if (Requester_entry == "" && Manager_entry == "" && RequestType_Entry == "Select" && Unique_Id != "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=RequestId eq '" + Unique_Id + "'";
+        }
+        else if (Requester_entry != "" && Manager_entry != "" && RequestType_Entry == "Select" && Unique_Id == "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Requester/Id eq '" + Requester_entry + "' and anager/Id eq '" + Manager_entry + "'";
+        }
+        else if (Requester_entry != "" && Manager_entry == "" && RequestType_Entry != "Select" && Unique_Id == "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Requester/Id eq '" + Requester_entry + "' and Request_x0020_Type/Id eq '" + RequestType_Entry + "'";
+        }
+        else if (Requester_entry != "" && Manager_entry == "" && RequestType_Entry == "Select" && Unique_Id != "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Requester/Id  eq '" + Requester_entry + "' and RequestId eq '" + Unique_Id + "'";
+        }
+        else if (Requester_entry == "" && Manager_entry != "" && RequestType_Entry != "Select" && Unique_Id == "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=anager/Id eq '" + Manager_entry + "' and Request_x0020_Type/Id eq '" + RequestType_Entry + "'";
+        }
+        else if (Requester_entry == "" && Manager_entry != "" && RequestType_Entry == "Select" && Unique_Id != "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=anager/Id eq '" + Manager_entry + "' and RequestId eq '" + Unique_Id + "'";
+        }
+        else if (Requester_entry == "" && Manager_entry == "" && RequestType_Entry != "Select" && Unique_Id != "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Request_x0020_Type/Id eq '" + RequestType_Entry + "' and RequestId eq '" + Unique_Id + "'";
+        }
+
+
+
+        else if (Requester_entry != "" && Manager_entry != "" && RequestType_Entry != "Select" && Unique_Id == "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Requester/Id eq '" + Requester_entry + "' and anager/Id eq '" + Manager_entry + "' and Request_x0020_Type/Id eq '" + RequestType_Entry + "'";
+        }
+        else if (Requester_entry != "" && Manager_entry != "" && RequestType_Entry == "Select" && Unique_Id != "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Requester/Id eq '" + Requester_entry + "' and anager/Id eq '" + Manager_entry + "' and anager/Id eq '" + Manager_entry + "'";
+        }
+        else if (Requester_entry == "" && Manager_entry != "" && RequestType_Entry != "Select" && Unique_Id != "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=anager/Id eq '" + Manager_entry + "' and Request_x0020_Type/Id eq '" + RequestType_Entry + "' and RequestId eq '" + Unique_Id + "'";
+        }
+        else if (Requester_entry != "" && Manager_entry == "" && RequestType_Entry != "Select" && Unique_Id != "") {
+
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items?$Select=Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Type/Id,Request_x0020_Type/Title,Request_x0020_Details,RequestId&$expand=Requester,anager,Request_x0020_Type&$filter=Requester/Id eq '" + Requester_entry + "' and Request_x0020_Type/Id eq '" + RequestType_Entry + "' and RequestId eq '" + Unique_Id + "'";
+        }
+        Header_Body = {
+            "Accept": "application/json;odata=verbose",
+            "content-type": "application/json; odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            "X-HTTP-Method": "GET",
+            //"If-Match": "*"
+        }
+            $.ajax(
+                   {
+                       url: requestUri,
+                       async: false,
+                       type: "GET",
+                       headers: Header_Body,
+                       success: function (data) {
+                           if (data.d) {
+
+                               for (var i = 0; i < data.d.results.length; i++) {
+
+                                   bindhtml += '<tr>';
+
+
+                                       bindhtml += '<td>' + data.d.results[i].Requester.Title + '</td>';
+                                       bindhtml += '<td>' + data.d.results[i].anager.Title + '</td>';
+                                       bindhtml += '<td>' + data.d.results[i].Request_x0020_Type.Title + '</td>';
+                                       bindhtml += '<td>' + data.d.results[i].RequestId; + '</td>';
+                                   
+                                  
+                                   bindhtml += '</tr>';
+                               }
+                               $('#SearchresultsBind').html(bindhtml);
+                           }
+
+                       },
+                       error: function (err) {
+                           console.log("ITRequest List Item Error Message: " + JSON.stringify(err));
+                       }
+                   });
+    }
+
+    
+
+    function Requesttype_lookup(RequestType_Entry) {
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('ITRequest')/items?$filter=Request_x0020_Type/Id%20eq%20" + RequestType_Entry + "&$select=Requester/Id,Requester/Title,ID,Request_x0020_Type/Id,Request_x0020_Type/Title&$expand=Request_x0020_Type,Requester";
+        var bool_itrequest = "0";
+        jQuery.ajax({
+            url: requestUri,
+            type: "GET",
+            async: false,
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+                if (data.d.results != null) {
+                    if (data.d.results.length > 0) {
+                        for (d = 0; d < data.d.results.length; d++) {
+                            if (Requester_entry == data.d.results[d].Requester) {
+                                bool_itrequest = "1";
+                                return bool_itrequest;
+                            }
+                        }
+                    }
+                }
+            },
+            error: function (err) {
+
+                alert("Error Occured:" + JSON.stringify(err));
+
+            }
+
+        });
+        return bool_itrequest;
+    }
+
+
+
+    function DrpRequesttype() {
+        var Requesttypehtml = "";
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('Request Type')/items";
+        jQuery.ajax({
+            url: requestUri,
+            type: "GET",
+            async: false,
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+                if (data.d.results) {
+                    if (data.d.results.length > 0) {
+                        Requesttypehtml += '<option value="Select">Select</option>';
+                        for (var i = 0; i < data.d.results.length; i++) {
+                            Requesttypehtml += '<option value="' + data.d.results[i].ID + '">' + data.d.results[i].Title + '</option>';
+                        }
+                        $("#drpRequesttype").html(Requesttypehtml);
+                    }
+                }
+
+            },
+            error: function (err) {
+
+                alert("Error Occured:" + JSON.stringify(err));
+
+            }
+
+        });
+    }
+
+    function initializePeoplePicker(peoplePickerElementId) {
+        var schema = {};
+        schema['PrincipalAccountType'] = 'User,DL,SecGroup,SPGroup';
+        schema['SearchPrincipalSource'] = 15;
+        schema['ResolvePrincipalSource'] = 15;
+        schema['AllowMultipleValues'] = true;
+        schema['MaximumEntitySuggestions'] = 50;
+        schema['Width'] = '100%';
+        this.SPClientPeoplePicker_InitStandaloneControlWrapper(peoplePickerElementId, null, schema);
+    }
+
+    function getUserInfo(peoplePickerDiv) {
+        var people = peoplePickerDiv + "_TopSpan";
+        var peoplePicker = this.SPClientPeoplePicker.SPClientPeoplePickerDict[people];
+        var keys = peoplePicker.GetAllUserKeys();
+        GetUserId(keys, peoplePickerDiv);
+    }
+
+    function GetUserId(userName, itemname) {
+        var user = userName.split(';');
+        for (var i = 0; i < user.length; i++) {
+            var siteUrl = _spPageContextInfo.siteAbsoluteUrl;
+            var accountName = user[i];
+            if (accountName != "") {
+                $.ajax({
+                    url: siteUrl + "/_api/web/siteusers(@v)?@v='" +
+                        encodeURIComponent(accountName) + "'",
+                    method: "GET",
+                    async: false,
+                    headers: { "Accept": "application/json; odata=verbose" },
+                    success: function (data) {
+                        ///popup user id received from site users.
+                        if (data.d) {
+
+                            if (itemname == "ManagerID") {
+                                Manager_entry = data.d.Id;
+                            }
+                            if (itemname == "requesterID") {
+                                Requester_entry = data.d.Id;
+                            }
+                        }
+                    },
+                    error: function (data) {
+                        console.log(JSON.stringify(data));
+                    }
+                });
+            }
+        }
+
+    }
+
+    function insertUserInPeoplePicker(userName, peoplePickerDiv) {
+        var people = peoplePickerDiv + "_TopSpan";
+        var peoplePicker = this.SPClientPeoplePicker.SPClientPeoplePickerDict[people];
+        peoplePicker.AddUserKeys(userName);
+    }
+
+    function getUserName(id, peoplePickerDiv) {
+        var returnValue;
+        jQuery.ajax({
+            url: _spPageContextInfo.webAbsoluteUrl + "/_api/Web/GetUserById(" + id + ")",
+            type: "GET",
+            async: false,
+            headers: { "Accept": "application/json;odata=verbose" },
+            success: function (data) {
+                var loginName = data.d.LoginName;
+                insertUserInPeoplePicker(loginName, peoplePickerDiv);
+
+            }
+        });
+    }
+
+</script>
+
+
+
+
+
+
+
+

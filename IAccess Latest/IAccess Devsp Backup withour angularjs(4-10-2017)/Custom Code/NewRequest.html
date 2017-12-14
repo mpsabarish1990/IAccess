@@ -1,0 +1,846 @@
+<link href="../SiteAssets/iAccess/StyleSheets/package/mldicons/material-icons.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/animate.min.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap-select.css" rel="stylesheet" type="text/css">
+<link href="../SiteAssets/iAccess/StyleSheets/package/mdl/material.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/fonts/font.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/editor.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/table.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/toastr.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/style.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/helper.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/introjs.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/bootstrap-datepicker3.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/CheckBox.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/fixedHeader.dataTables.min.css" rel="stylesheet">
+<link href="../SiteAssets/iAccess/StyleSheets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+
+<script src="../SiteAssets/iAccess/Stylesheets/package/mdl/material.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/spscript.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/toastr.min.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/editor.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<!--<script src="../SiteAssets/iAccess/Scripts/sppeoplepicker.js" type="text/javascript"></script>-->
+<script src="../SiteAssets/iAccess/Scripts/handlebars-v4.0.5.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/Global.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/intro.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/date.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/common.js" type="text/javascript"></script>
+<script src="../SiteAssets/iAccess/Scripts/camljs.js" type="text/javascript"></script>
+<!--<script src="../SiteAssets/iAccess/Scripts/NewRequest.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="../_layouts/15/autofill.js"></script>
+<script type="text/javascript" src="../_layouts/15/1033/strings.js"></script>
+<script type="text/javascript" src="../_layouts/15/clientforms.js">  </script>
+<script type="text/javascript" src="../_layouts/15/clientpeoplepicker.js"></script>
+<script type="text/javascript" src="../_layouts/15/clienttemplates.js">  </script>
+
+<div id="div_newform">
+<div class="cssload-container">
+    <div class="cssload-speeding-wheel">
+    </div>
+</div>
+<div class="">
+    <h4 class="main_title"><span>New Request</span></h4>
+    <div class="mdl-cell--12-col">
+        <div class="alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert" id="staticInfoContainer">
+            <strong></strong>
+        </div>
+    </div>
+
+    <main class="mdl-layout__content">
+            <div action="#" class="horizontal-form" id="">
+                <div class="mdl-grid mdl-color--white mdl-shadow--2dp">
+                    
+                    <div class="mdl-cell--6-col">
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request for<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col requestfor">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20" >
+                                <label class="radio-inline" >
+                                    <input type="radio" name="inlineRadioOptions" class="rdselfother" id="rdSelf" value="self" checked >
+                                    Self
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions"  class="rdselfother"  id="rdOther" value="others">
+                                    Others
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Employee / User-Id<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <div id="requesterID" style="display:none"></div>
+                                <input class="form-control" id="txtRequestUserName" readonly="readonly" value="">
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Manager <span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                               <div id="ManagerID"></div>
+                               <label class="mdl-textfield__label"  for="sample1" id="peopleManager">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="mdl-cell--6-col">
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request Type<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20" >
+                                <select id="drpRequesttype" class="form-control"></select>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request Details<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <textarea class="form-control" id="txtRequestComments" maxlength="4000"></textarea>
+                                <label class="mdl-textfield__label" for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request Id<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <label id="txtuniqueid">TILLIDACC272017XXXX</label>
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--12-col ButtonAction">
+                        <div class="mdl-js-textfield">
+                            <label id="lblSubmit" for="submit" class="mdl-button mdl-js-button green-bg-100">
+                                <a id="RequestConfirmation">Submit</a>
+                                <a style="display: none" id="ConfirmationWindow" data-toggle="modal" data-target="#ConfirmationModal" >Submit</a>
+                            </label>
+                            <label id="Label1" for="submit" class="mdl-button mdl-js-button blue-bg-100"><a href="Dashboard.aspx">Cancel</a></label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         </main>
+
+</div>
+<!--For Confirmation Modal Window-->
+
+<div class="modal fade" id="ConfirmationModal" role="dialog" id="">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Submit Request
+                </h4>
+            </div>
+            <div class="modal-body" style="padding: 30px;">
+                <span>Are you sure do you want to proceed?</span>
+            </div>
+            <div class="modal-footer">
+                <a type="button" style="cursor: pointer;" id="BtnSubmitConfirmed" class="btn btn-info">Yes</a>
+                <a type="button" style="cursor: pointer;" id="btnNo" data-dismiss="modal" class="btn btn-default">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="div_viewform" style="display: none">
+<div class="cssload-container">
+    <div class="cssload-speeding-wheel">
+    </div>
+</div>
+<div class="">
+
+    <h4 id="H1">View Request</h4>
+
+    <div class="mdl-cell--12-col">
+        <div class="alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert" id="Div2">
+            <strong></strong>
+        </div>
+    </div>
+
+    <main class="mdl-layout__content">
+            <div action="#" class="horizontal-form">
+                <div class="mdl-grid mdl-color--white mdl-shadow--2dp">
+                    
+                    <div class="mdl-cell--6-col">
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request for<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col requestfor">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20" >
+                                <input class="form-control" id="lbl_requestfor" readonly="readonly" value="">
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                                
+                            </div>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Employee / User-Id<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <input class="form-control" id="lbl_requesterID" readonly="readonly" value="">
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Manager <span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                               <input class="form-control" id="lbl_managerID" readonly="readonly" value="">
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="mdl-cell--6-col">
+
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request Details<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <input class="form-control" id="lbl_requestdetails" readonly="readonly" value="">
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Request Id<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                 <input class="form-control" id="lbl_requestID" readonly="readonly" value="">
+                                <label class="mdl-textfield__label"  for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--12-col ButtonAction">
+                        <div class="mdl-js-textfield">
+                            
+                            <label id="Label5" for="submit" class="mdl-button mdl-js-button blue-bg-100"><a href="http://devsp13:20202/sites/IssueTracker/IAccess/Pages/Dashboard_Old.aspx">Cancel</a></label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         </main>
+
+</div>
+<!--For Confirmation Modal Window-->
+
+<div class="modal fade" id="Div6" role="dialog" id="">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Submit Request
+                </h4>
+            </div>
+            <div class="modal-body" style="padding: 30px;">
+                <span>Are you sure do you want to proceed?</span>
+            </div>
+            <div class="modal-footer">
+                <a type="button" style="cursor: pointer;" id="A3" class="btn btn-info">Yes</a>
+                <a type="button" style="cursor: pointer;" id="A4" data-dismiss="modal" class="btn btn-default">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+ <div id="errormessage"></div>
+<style>
+    #errormessage {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 0px;
+        font-weight: 700;
+            color: red;
+    }
+</style>
+
+
+<!--<script>
+(function ($) {
+        $.getUrlVar = function (key) {
+            var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
+            return result && unescape(result[1]) || "";
+        };
+    })(jQuery);
+</script>-->
+
+<script>
+
+
+    // keys and configurations
+
+    var clientContext;
+    var collListItem;
+    // $.showLoader();
+    var configStoreListName = "Config Store";
+    var configStoreCategory = "DataTable";
+    var currentUser = null;
+   
+    var keyCollection = {
+        "RepositoryListName": "" // default value
+     
+
+    };
+
+    var keys = Object.keys(keyCollection);
+    var query = new CamlBuilder()
+        .Where().TextField("Key").In(keys)
+        .And().TextField("Category").EqualTo(configStoreCategory).ToString();
+
+    var listDisplayName = "";
+    var Requester_entry = "";
+    var Manager_entry = "";
+    var Comments_entry = "";
+    var Status_entry = "";
+    var RequestType_Entry = "";
+    var RequestFor_entry = "";
+    var Login_Name_entry = "";
+    var uniqueid_value = "";
+    var Adminvalue_Id = [];
+    jQuery(document).ready(function () {
+
+        DrpRequesttype();
+        SP.SOD.executeFunc('sp.js', 'SP.ClientContext', start());
+      
+       
+
+    });
+    function start() {
+        clientContext = new SP.ClientContext(_spPageContextInfo.webAbsoluteUrl);
+        web = clientContext.get_web();
+        var oList = web.get_lists().getByTitle(configStoreListName);
+        var camlQuery = new SP.CamlQuery();
+        camlQuery.set_viewXml('<View><Query>' + query + '</Query></View>');
+        collListItem = oList.getItems(camlQuery);
+        currentUser = web.get_currentUser();
+        clientContext.load(currentUser);
+        clientContext.load(collListItem);
+        clientContext.executeQueryAsync(Function.createDelegate(this, onQuerySucceeded), Function.createDelegate(this, onQueryFailed));
+    }
+
+    function onQuerySucceeded(sender, args) {
+        var listItemEnumerator = collListItem.getEnumerator();
+        while (listItemEnumerator.moveNext()) {
+            var oListItem = listItemEnumerator.get_current();
+            if (!keyCollection[oListItem.get_item('Key')]) {
+                keyCollection[oListItem.get_item('Key')] = oListItem.get_item('Value');
+            }
+        }
+        listDisplayName = keyCollection["RepositoryListName"];
+        //querystring = $.getUrlVar('Ticket_ID'); 
+
+        //if (querystring != "") {
+
+        //    $("#div_viewform").show();
+        //    $("#div_newform").hide();
+        //    $("#div_btnhide").hide();
+
+        //    ViewFormEntry();
+
+        //}
+        //else {
+
+        //    $("#div_viewform").hide();
+        //    $("#div_newform").show();
+        //    $("#div_btnhide").show();
+        //}
+
+        initializePeoplePicker('requesterID');
+        initializePeoplePicker('ManagerID');
+        
+       
+
+        uniqueid_value = UniqueIDFormat();
+        //$("#txtuniqueid").attr("readonly", true);
+        //$("#txtuniqueid").html(uniqueid_value);
+
+        $("#RequestConfirmation").click(function () {
+            
+            if (validateform()) {
+                
+                if (Requesttype_lookup($("#drpRequesttype option:selected").val()) == "0") {
+                    FormEntry();
+                    BindRequestEntry();
+                }
+                else {
+                    $("#errormessage").html("Please Select Request type");
+                }
+            }
+            else {
+                $("#errormessage").html("Please Enter all the required fields");
+            }
+        });
+
+        if ($("#rdSelf").is(':checked')) {
+            $("#requesterID").hide();
+            $('#txtRequestUserName').show();
+            GetCurrentUserDetails();
+
+        }
+        $('input[type=radio][name=inlineRadioOptions]').change(function () {
+            if (this.value == 'self') {
+                $("#requesterID").hide();
+                $('#txtRequestUserName').show();
+                initializePeoplePicker('requesterID');
+                initializePeoplePicker('ManagerID');
+                GetCurrentUserDetails();
+
+            }
+            else if (this.value == 'others') {
+                $('#txtRequestUserName').hide();
+                $("#requesterID").show();
+                initializePeoplePicker('requesterID');
+                initializePeoplePicker('ManagerID');
+            }
+        });
+
+        // $('#txtRequestUserName').val(currentUser.get_title());
+        // getManagerFromUserProfile(currentUser.get_loginName().split("|")[1]);
+        //getManagerFromUserProfile(currentUser.get_loginName());
+        // initializePeoplePicker();
+        ////$.hideLoader();
+    }
+
+    function onQueryFailed(sender, args) {
+        //$.hideLoader();
+        $.showError(args.get_message() + '\n' + args.get_stackTrace());
+    }
+    function FormEntry() {
+
+        getUserInfo('requesterID');
+        getUserInfo('ManagerID');
+        Comments_entry = $('#txtRequestComments').val();
+        //Unique_Id = $('#txtuniqueid').text();
+        RequestType_Entry = $("#drpRequesttype option:selected").val();
+        Admin_value();
+        $('.rdselfother').each(function () {
+            if ($(this).is(':checked')) {
+                if ($(this).attr('value') == "self") {
+                    Status_entry = "Self";
+                }
+                else {
+                    Status_entry = "Other";
+                }
+
+            }
+        });
+        
+    }
+
+    function Admin_value()
+    {
+       var value_admin = "";
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Request Type')/items(" + RequestType_Entry + ")";
+               jQuery.ajax({
+                   url: requestUri,
+                   type: "GET",
+                   async: false,
+                   headers: { "accept": "application/json;odata=verbose" },
+                   success: function (data) {
+                   if(data.d != null)
+                   {
+                      if(data.d.AdminId.results != null)
+                      {
+                        for(var j=0 ;j <data.d.AdminId.results.length ; j++)
+                        {
+                            Adminvalue_Id.push(data.d.AdminId.results[j]);
+                        }
+                      }
+                   }
+
+                      
+                   },
+                   error: function (err) {
+
+                       alert("Error Occured:" + JSON.stringify(err));
+
+                   }
+
+               });
+             
+
+    }
+    function BindRequestEntry() {
+       var requestUri = "";
+       var Header_Body = "";
+  
+        //if (querystring != "") {
+        //    requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items(" + querystring + ")";
+        //    Header_Body = {
+        //        "Accept": "application/json;odata=verbose",
+        //        "content-type": "application/json; odata=verbose",
+        //        "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+        //        "X-HTTP-Method": "MERGE",
+        //        "If-Match": "*"
+        //    }
+        //}
+        //else {
+        //    requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items";
+        //    Header_Body = {
+        //        "Accept": "application/json;odata=verbose",
+        //        "content-type": "application/json; odata=verbose",
+        //        "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+        //        //"X-HTTP-Method": "MERGE",
+        //        //"If-Match": "*"
+        //    }
+        //}
+
+        requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items";
+        Header_Body = {
+            "Accept": "application/json;odata=verbose",
+            "content-type": "application/json; odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            //"X-HTTP-Method": "MERGE",
+            //"If-Match": "*"
+        }
+                var itemtype = getListItemType(listDisplayName);
+        $.ajax(
+               {
+                   url: requestUri,
+                   async: false,
+                   type: "POST",
+                   data: JSON.stringify({
+                       '__metadata': { 'type': itemtype },
+                       'RequestFor': Status_entry,
+                       'anagerId': Manager_entry,
+                       'Request_x0020_TypeId': RequestType_Entry,
+                       'RequesterId': Requester_entry,
+                       'Request_x0020_Details': Comments_entry,
+                      
+                       'RequestId': UniqueIDFormat(),
+                       'AdminId': {results : Adminvalue_Id} 
+                       
+
+                   }),
+                   headers: Header_Body,
+                   success: function (data) {
+                       window.location.href = _spPageContextInfo.webAbsoluteUrl + "/Pages/Dashboard.aspx";
+                   },
+                   error: function (err) {
+                       console.log("ITRequest List Item Error Message: " + JSON.stringify(err));
+                   }
+               });
+    }
+
+
+    // Getting the item type for the list
+    function getListItemType(name) {
+        return "SP.Data." + name[0].toUpperCase() + name.substring(1) + "ListItem";
+    }
+
+    function Requesttype_lookup(RequestType_Entry) {
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('ITRequest')/items?$filter=Request_x0020_Type/Id%20eq%20" + RequestType_Entry + "&$select=Requester/Id,Requester/Title,ID,Request_x0020_Type/Id,Request_x0020_Type/Title&$expand=Request_x0020_Type,Requester";
+        var bool_itrequest = "0";
+        jQuery.ajax({
+            url: requestUri,
+            type: "GET",
+            async: false,
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+                if (data.d.results != null) {
+                    if (data.d.results.length > 0) {
+                        for (d = 0; d < data.d.results.length; d++) {
+                            if (Requester_entry == data.d.results[d].Requester) {
+                                bool_itrequest = "1";
+                                return bool_itrequest;
+                            }
+                        }
+                    }
+                }
+            },
+            error: function (err) {
+
+                alert("Error Occured:" + JSON.stringify(err));
+
+            }
+
+        });
+        return bool_itrequest;
+    }
+
+
+
+    function DrpRequesttype() {
+        var Requesttypehtml = "";
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('Request Type')/items";
+        jQuery.ajax({
+            url: requestUri,
+            type: "GET",
+            async: false,
+            headers: { "accept": "application/json;odata=verbose" },
+            success: function (data) {
+                if (data.d.results) {
+                    if (data.d.results.length > 0) {
+                        Requesttypehtml += '<option value="Select">Select</option>';
+                        for (var i = 0; i < data.d.results.length; i++) {
+                            Requesttypehtml += '<option value="' + data.d.results[i].ID + '">' + data.d.results[i].Title + '</option>';
+                        }
+                        $("#drpRequesttype").html(Requesttypehtml);
+                    }
+                }
+
+            },
+            error: function (err) {
+
+                alert("Error Occured:" + JSON.stringify(err));
+
+            }
+
+        });
+    }
+ //function ViewFormEntry() {
+ //    var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items(" + querystring + ")?$select=ID,RequestFor,Requester/Id,Requester/Title,anager/Id,anager/Title,Request_x0020_Details,RequestId&$expand=Requester,anager";
+ //       jQuery.ajax({
+ //           url: requestUri,
+ //           type: "GET",
+ //           headers: { "accept": "application/json;odata=verbose" },
+ //           success: function (data) {
+
+ //               $("#lbl_requestfor").val(data.d.RequestFor);
+ //               $("#lbl_requesterID").val(data.d.Requester.Title);
+ //               $("#lbl_managerID").val(data.d.anager.Title);
+ //               $("#lbl_requestdetails").val(data.d.Request_x0020_Details);
+ //               $("#lbl_requestID").val(data.d.RequestId);
+
+               
+ //               //getUserName(data.d.AccountManagerId, 'accountmanager');
+
+
+                
+ //           },
+ //           error: function (err) {
+
+ //               alert("Error Occured:" + JSON.stringify(err));
+
+ //           }
+
+ //       });
+ //   }
+
+    function initializePeoplePicker(peoplePickerElementId) {
+        var schema = {};
+        schema['PrincipalAccountType'] = 'User,DL,SecGroup,SPGroup';
+        schema['SearchPrincipalSource'] = 15;
+        schema['ResolvePrincipalSource'] = 15;
+        schema['AllowMultipleValues'] = true;
+        schema['MaximumEntitySuggestions'] = 50;
+        schema['Width'] = '100%';
+        this.SPClientPeoplePicker_InitStandaloneControlWrapper(peoplePickerElementId, null, schema);
+    }
+
+    function getUserInfo(peoplePickerDiv) {
+        var people = peoplePickerDiv + "_TopSpan";
+        var peoplePicker = this.SPClientPeoplePicker.SPClientPeoplePickerDict[people];
+        var keys = peoplePicker.GetAllUserKeys();
+        GetUserId(keys, peoplePickerDiv);
+    }
+
+    function GetUserId(userName, itemname) {
+        var user = userName.split(';');
+        for (var i = 0; i < user.length; i++) {
+            var siteUrl = _spPageContextInfo.siteAbsoluteUrl;
+            var accountName = user[i];
+            if (accountName != "") {
+                $.ajax({
+                    url: siteUrl + "/_api/web/siteusers(@v)?@v='" +
+                        encodeURIComponent(accountName) + "'",
+                    method: "GET",
+                    async: false,
+                    headers: { "Accept": "application/json; odata=verbose" },
+                    success: function (data) {
+                        ///popup user id received from site users.
+                        if (data.d) {
+
+                            if (itemname == "ManagerID") {
+                                Manager_entry = data.d.Id;
+                            }
+                            if (itemname == "requesterID") {
+                                Requester_entry = data.d.Id;
+                            }
+                        }
+                    },
+                    error: function (data) {
+                        console.log(JSON.stringify(data));
+                    }
+                });
+            }
+        }
+
+    }
+
+    function insertUserInPeoplePicker(userName, peoplePickerDiv) {
+        var people = peoplePickerDiv + "_TopSpan";
+        var peoplePicker = this.SPClientPeoplePicker.SPClientPeoplePickerDict[people];
+        peoplePicker.AddUserKeys(userName);
+    }
+
+    function getUserName(id, peoplePickerDiv) {
+        var returnValue;
+        jQuery.ajax({
+            url: _spPageContextInfo.webAbsoluteUrl + "/_api/Web/GetUserById(" + id + ")",
+            type: "GET",
+            async: false,
+            headers: { "Accept": "application/json;odata=verbose" },
+            success: function (data) {
+                var loginName = data.d.LoginName;
+                insertUserInPeoplePicker(loginName, peoplePickerDiv);
+
+            }
+        });
+    }
+
+    function GetCurrentUserDetails() {
+        var requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/currentuser";
+        $.ajax({
+            url: requestUri,
+            headers: {
+                Accept: "application/json;odata=verbose"
+            },
+            async: false,
+            success: function (data) {
+                var items = data.d.Title;
+                $('#txtRequestUserName').val(items);
+                insertUserInPeoplePicker(data.d.LoginName, "requesterID");
+                Login_Name_entry = data.d.LoginName.split('|')[1];
+                getManagerFromUserProfile(Login_Name_entry);
+            },
+            eror: function (data) {
+                alert("An error occurred. Please try again.");
+            }
+        });
+    }
+
+    function getManagerFromUserProfile(loginName) {
+        var requestHeaders = {
+            "Accept": "application/json;odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val()
+        };
+        var requesturl = _spPageContextInfo.webAbsoluteUrl + "/_api/SP.UserProfiles.PeopleManager/GetUserProfilePropertyFor(accountName=@v,propertyName='Manager')?@v='" + loginName + "'";
+        $.ajax({
+            url: requesturl,
+            type: "GET",
+            data: {},
+            async: false,
+            contentType: "application/json;odata=verbose",
+            headers: requestHeaders,
+            success: function (data) {
+                if (data.d.GetUserProfilePropertyFor != null && data.d.GetUserProfilePropertyFor != "") {
+
+                    insertUserInPeoplePicker(data.d.GetUserProfilePropertyFor, "ManagerID");
+                }
+            },
+            error: function (jqxr, errorCode, errorThrown) {
+                alert("An error occurred. Manager Name");
+            }
+        });
+    }
+
+   
+
+    function validateform() {
+       
+        var Requester_validate = $("#requesterID").val();
+        var Manager_validate = $("#ManagerID").val();
+        var Requestdetails_validate = $("#txtRequestComments").val();
+       
+
+        if ($("#requesterID .ms-entity-resolved").html() == undefined) {
+            return false;
+        }
+        if ($("#ManagerID .ms-entity-resolved").html() == undefined) {
+            return false;
+        }
+        if (Requestdetails_validate == "") {
+            return false;
+        }
+       
+        return true;
+    }
+
+    function UniqueIDFormat() {
+        var dt = new Date();
+        var time = "TILLIDACC" + dt.getDate() + "" + dt.getFullYear() + "" + dt.getHours() + "" + dt.getMinutes();
+        return time;
+    }
+   
+
+</script>

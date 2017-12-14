@@ -1,0 +1,252 @@
+﻿
+
+
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+
+
+
+<div id="RequestHistory"></div>
+
+<script>
+    (function ($) {
+        $.getUrlVar = function (key) {
+            var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
+            return result && unescape(result[1]) || "";
+        };
+    })(jQuery);
+</script>
+
+<script type="text/javascript">
+
+    var current_userdetails = "";
+
+    $(document).ready(function () {
+
+        querystrings = $.getUrlVar('Ticket_ID');
+        Retrieve_CurrentUser();
+       
+       
+    });
+
+
+    function Retrieve_CurrentUser() {
+        $.ajax({
+            url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/CurrentUser",
+            method: "GET",
+            async: false,
+            headers: { "Accept": "application/json; odata=verbose" },
+            success: function (data) {
+                //current_userdetails = currentUser.get_id();
+                current_userdetails = data.d.Id;
+                alert(current_userdetails);
+                RequestHistory();
+            },
+            error: function (data) {
+                failure(data);
+            }
+        });
+
+    }
+
+    //function RequestHistory() {
+    //    var RequestHistoryHTML = "";
+    //    var Final_querystring = "";
+    //    $.ajax({
+    //        url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Workflow Tasks')/Items?$Select=RelatedItems,AssignedTo/Id,AssignedTo/Title,TaskOutcome,Modified&$expand=AssignedTo&$filter=TaskOutcome eq 'Approved' and AssignedTo eq '" + currentuserdetails + "'",
+    //        type: "GET",
+    //        async: false,
+    //        headers: { "accept": "application/json;odata=verbose" },
+    //        success: function (data) {
+    //            // alert(data);
+
+    //            if (data.d.results) {
+
+    //                RequestHistoryHTML+='  <table>              ';
+    //                RequestHistoryHTML+='  <tr>                 ';
+    //                RequestHistoryHTML+='  <th>Action By</th>   ';
+    //                RequestHistoryHTML+='  <th>Action</th>   ';
+    //                RequestHistoryHTML+='  <th>Date</th>        ';
+    //                RequestHistoryHTML+='  </tr>                ';
+                    
+
+    //                for (var i = 0; i < data.d.results.length; i++) {
+
+    //                    var obj = JSON.parse(data.d.results[i].RelatedItems)
+    //                    if (obj.length > 0) {
+    //                        for (var t = 0; t < obj.length; t++) {
+    //                            if (querystrings == obj[t].ItemId) {
+    //                               // alert(data.d.results[i].ID);
+    //                                Final_querystring=(data.d.results[i].ID);
+    //                            }
+    //                        }
+    //                    }
+    //                    var Actionby = data.d.results[i].AssignedTo.Title;
+    //                    var Action = data.d.results[i].TaskOutcome;
+    //                    var Date = data.d.results[i].Modified;
+                       
+    //                    var valuesplit = Date.split('T')[0];
+    //                    var valuetimesplit = Date.split('T')[1];
+    //                    var valuetimesplitvalue = valuetimesplit.split('Z')[0];
+                        
+    //                    RequestHistoryHTML+='  <tr>                            ';
+    //                    RequestHistoryHTML += '  <td>' + Actionby + '</td>     ';
+    //                    RequestHistoryHTML += '  <td>' + Action + '</td>     ';
+    //                    RequestHistoryHTML += '  <td>' + valuesplit + ' ' + valuetimesplitvalue + '</td>         ';
+    //                    RequestHistoryHTML+=  '  </tr>                           ';
+                        
+                        
+
+
+
+
+    //                }
+                    
+
+    //                RequestHistoryHTML += '  </table>             ';
+
+
+
+    //                $('#RequestHistory').html(RequestHistoryHTML);
+
+
+
+    //            }
+
+    //        }
+    //    });
+    //}
+
+
+
+    function RequestHistory() {
+        var requesturl = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Workflow Tasks')/Items?$Select=ID,RelatedItems,AssignedTo/Id,AssignedTo/Title,TaskOutcome&$expand=AssignedTo&$filter=TaskOutcome eq 'Approved' and AssignedTo eq '" + current_userdetails + "'";
+        $.ajax
+              ({
+                  url: requesturl,
+                  method: "GET",
+                  async: false,
+                  headers: { "Accept": "application/json; odata=verbose" },
+                  success: function (data) {
+                      if (data.d != null) {
+
+                          for (var i = 0; i < data.d.results.length; i++) {
+                              var obj = JSON.parse(data.d.results[i].RelatedItems)
+                              if (obj.length > 0) {
+                                  for (var t = 0; t < obj.length; t++) {
+                                      if (querystrings == obj[t].ItemId) {
+
+                                          alert(data.d.results[i].ID);
+                                          WF_RequestHistory(data.d.results[i].ID);
+
+                                      }
+
+                                  }
+                              }
+                          }
+                      }
+
+                  }
+              });
+
+
+    }
+
+
+    function WF_RequestHistory(updateID) {
+
+        var RequestHistoryHTML = "";
+            var Final_querystring = "";
+            $.ajax({
+                url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('Workflow Tasks')/Items(" + updateID + ")?$Select=RelatedItems,AssignedTo/Id,AssignedTo/Title,TaskOutcome,Modified&$expand=AssignedTo&$filter=TaskOutcome eq 'Approved' and AssignedTo eq '" + current_userdetails + "'",
+                type: "GET",
+                async: false,
+                headers: { "accept": "application/json;odata=verbose" },
+                success: function (data) {
+                    // alert(data);
+
+                    if (data.d.results) {
+
+                        RequestHistoryHTML+='  <table>              ';
+                        RequestHistoryHTML+='  <tr>                 ';
+                        RequestHistoryHTML+='  <th>Action By</th>   ';
+                        RequestHistoryHTML+='  <th>Action</th>   ';
+                        RequestHistoryHTML+='  <th>Date</th>        ';
+                        RequestHistoryHTML+='  </tr>                ';
+
+
+                        for (var i = 0; i < data.d.results.length; i++) {
+
+                            var Actionby = data.d.results[i].AssignedTo.Title;
+                            var Action = data.d.results[i].TaskOutcome;
+                            var Date = data.d.results[i].Modified;
+
+                            var valuesplit = Date.split('T')[0];
+                            var valuetimesplit = Date.split('T')[1];
+                            var valuetimesplitvalue = valuetimesplit.split('Z')[0];
+
+                            RequestHistoryHTML+='  <tr>                            ';
+                            RequestHistoryHTML += '  <td>' + Actionby + '</td>     ';
+                            RequestHistoryHTML += '  <td>' + Action + '</td>     ';
+                            RequestHistoryHTML += '  <td>' + valuesplit + ' ' + valuetimesplitvalue + '</td>         ';
+                            RequestHistoryHTML+=  '  </tr>                           ';
+
+
+
+
+
+
+                        }
+
+
+                        RequestHistoryHTML += '  </table>             ';
+
+
+
+                        $('#RequestHistory').html(RequestHistoryHTML);
+
+
+
+                    }
+
+                }
+            });
+    }
+	</script>
+
+	
+									
+									
+										
+											
+											
+											
+											
+											
+											
+											
+											
+											
+										
+									
+								
+								
+								
+							

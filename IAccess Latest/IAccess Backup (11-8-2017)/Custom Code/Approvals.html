@@ -1,0 +1,475 @@
+
+
+
+
+<div id="div_newform">
+<div class="cssload-container">
+    <div class="cssload-speeding-wheel">
+    </div>
+</div>
+    <div id="Approval_hideShow" style="display:none">
+<div class="">
+    <h4 class="main_title"><span>Approvals</span></h4>
+    <div class="mdl-cell--12-col">
+        <div class="alert alert-success alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong></strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible hidden" role="alert" id="staticInfoContainer">
+            <strong></strong>
+        </div>
+    </div>
+
+    <main class="mdl-layout__content">
+            <div action="#" class="horizontal-form" id="">
+                <div class="mdl-grid mdl-color--white mdl-shadow--2dp">
+                    
+                    <div class="mdl-cell--6-col">
+
+                        <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Action<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col requestfor">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20" >
+                                 <label class="radio-inline" id="lbl_approval" style="display:none">
+                                    <input type="radio" name="inlineRadioOptions" class="rdselfother" id="rdapproval" value="Approve" >
+                                    Approve
+                                </label>
+                                <label class="radio-inline" id="lbl_process" style="display:none">
+                                    <input type="radio" name="inlineRadioOptions" class="rdselfother" id="rdprocess" value="Processed"  >
+                                    Processed
+                                </label>
+                                <label class="radio-inline" >
+                                    <input type="radio" name="inlineRadioOptions" class="rdselfother" id="rdsendback" value="Send back to Requestor" >
+                                    Send back to Requestor
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions"  class="rdselfother"  id="rdcancel" value="Cancel Request">
+                                    Cancel Request
+                                </label>
+                            </div>
+                        </div>
+
+                             <div class="mdl-cell mdl-cell--12-col">
+                            <label class="" for="sample1">Remarks/Comments<span style="color: red">*</span></label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col" id="ApprovalComments_Manager" style="display:none">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <textarea class="form-control" id="txtApprovalComments_Manager" maxlength="4000" ></textarea>
+                                <label class="mdl-textfield__label" for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--12-col" id="ApprovalComments_Admin" style="display:none">
+                            <div class="mdl-textfield mdl-js-textfield margin-top--20">
+                                <textarea class="form-control" id="txtApprovalComments_Admin" maxlength="4000"></textarea>
+                                <label class="mdl-textfield__label" for="sample1">&nbsp;</label>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <div class="mdl-cell mdl-cell--12-col ButtonAction">
+                        <div class="mdl-js-textfield">
+                            <label id="lblSubmit" for="submit" class="mdl-button mdl-js-button green-bg-100">
+                                <a id="RequestConfirmation">Submit</a>
+                                <a style="display: none" id="ConfirmationWindow" data-toggle="modal" data-target="#ConfirmationModal" >Submit</a>
+                            </label>
+                            <label id="Label1" for="submit" class="mdl-button mdl-js-button blue-bg-100"><a href="Dashboard.aspx">Cancel</a></label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         </main>
+
+</div>
+
+<!--For Confirmation Modal Window-->
+
+<div class="modal fade" id="ConfirmationModal" role="dialog" id="">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Submit Request
+                </h4>
+            </div>
+            <div class="modal-body" style="padding: 30px;">
+                <span>Are you sure do you want to proceed?</span>
+            </div>
+            <div class="modal-footer">
+                <a type="button" style="cursor: pointer;" id="BtnSubmitConfirmed" class="btn btn-info">Yes</a>
+                <a type="button" style="cursor: pointer;" id="btnNo" data-dismiss="modal" class="btn btn-default">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+ <div id="errormessage"></div>
+</div>
+<style>
+    #errormessage {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 0px;
+        font-weight: 700;
+            color: red;
+    }
+</style>
+
+<script>
+
+   
+
+(function ($) {
+        $.getUrlVar = function (key) {
+            var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
+            return result && unescape(result[1]) || "";
+        };
+    })(jQuery);
+</script>
+
+<script>
+    var listDisplayName = "ITRequest";
+    var listWFDisplayName = "Workflow%20Tasks";
+    var Action_entry = "";
+    var Remarks_entry_Manager = "";
+    var Remarks_entry_Admin = "";
+    var Login_Name_entry = "";
+    var clientcontext = null;
+    var currentUser = null;
+    var currentuserdetails = "";
+    var CurrentUserName = "";
+    var Status_Completed="";
+ 
+
+    var Taskovercome_completed="";
+   
+
+    var userid = _spPageContextInfo.userId;
+   
+   
+
+    jQuery(document).ready(function () {
+
+        querystrings = $.getUrlVar('Ticket_ID');
+      
+
+        getCurrentUser();
+       
+
+        $("#RequestConfirmation").click(function () {
+
+            //if (validateform()) {
+
+                FormEntry();
+                BindRequestEntry();
+                Approvalitems();
+                //WF_DataUpdate();
+            //    //WF_DataFilter();
+            //}
+            //else {
+            //    $("#errormessage").html("Please Enter all the required fields");
+            //}
+        });
+
+    });
+   
+    
+    function FormEntry() {
+       
+        $('.rdselfother').each(function(){
+            if ($(this).is(':checked')) {
+                if ($(this).attr('value') == "Approve") {
+                    Action_entry = "Approve";
+                    Status_Completed = "Completed";
+                    Taskovercome_completed = "Approved";
+                }
+                else if ($(this).attr('value') == "Processed") {
+                    Action_entry = "Processed";
+                    Status_Completed = "Completed";
+                    Taskovercome_completed = "Approved";
+
+                }
+                else if ($(this).attr('value') == "Send back to Requestor") {
+                    Action_entry = "Send back to Requestor";
+                    Status_Completed = "Completed";
+                    Taskovercome_completed = "Approved";
+                }
+                else
+                {
+                    Action_entry = "Cancel";
+                    Status_Completed = "Rejected";
+                    Taskovercome_completed = "Cancel";
+                }
+        }
+        });
+       
+
+        Remarks_entry_Manager = $('#txtApprovalComments_Manager').val();
+        Remarks_entry_Admin = $('#txtApprovalComments_Admin').val();
+    }
+
+    function BindRequestEntry() {
+        var requestUri = "";
+        var Header_Body = "";
+
+        requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listDisplayName + "')/items(" + querystrings + ")";
+        Header_Body = {
+            "Accept": "application/json;odata=verbose",
+            "content-type": "application/json; odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+            "X-HTTP-Method": "MERGE",
+            "If-Match": "*"
+        }
+        var itemtype = getListItemType(listDisplayName);
+        $.ajax(
+              
+               {
+                   url: requestUri,
+                   async: false,
+                   type: "POST",
+                   data: JSON.stringify({
+                       '__metadata': { 'type': itemtype },
+                       'Action': Action_entry,
+                       'Remarks': Remarks_entry_Manager,
+                       'Remarks_x0020_Admin': Remarks_entry_Admin
+                   }),
+                   headers: Header_Body,
+                   success: function (data) {
+                       window.location.href = _spPageContextInfo.webAbsoluteUrl + "/Pages/Dashboard.aspx";
+                   },
+                   error: function (err) {
+                       console.log("IT Request List Item Error Message: " + JSON.stringify(err));
+                   }
+               });
+    }
+
+
+    
+    function getListItemType(name) {
+        return "SP.Data." + name[0].toUpperCase() + name.substring(1) + "ListItem";
+    }
+
+    //function validateform() {
+       
+    //    var Remarks_validate = $("#txtApprovalComments_Manager").val();
+        
+    //    if (Remarks_validate == "") {
+    //        return false;
+    //    }
+        
+    //    return true;
+    //}
+
+
+
+    
+
+    function getCurrentUser() {
+       // getUserWebPermissionREST();
+        $.ajax({
+            url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/CurrentUser",
+            method: "GET",
+             async: false,
+            headers: { "Accept": "application/json; odata=verbose" },
+            success: function (data) {
+                getCurrentUserGroupColl(data.d.Id);
+                
+                CurrentUserName = data.d.Title;
+            },
+            error: function (data) {
+                failure(data);
+            }
+        });
+
+    }
+
+    function getCurrentUserGroupColl(UserID) {
+        
+        $.ajax
+        ({
+            url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/GetUserById(" + UserID + ")/Groups",
+            method: "GET",
+             async: false,
+            headers: { "Accept": "application/json; odata=verbose" },
+            success: function (data) {
+                if(data.d.results.length > 0)
+                {
+                    for(var i=0;i<data.d.results.length;i++)
+                    {
+                        if (data.d.results[i].Title == "Managers" || data.d.results[i].Title == "Admin") {
+                            WF_Approvalhideshow();
+                        }
+
+                        if (data.d.results[i].Title == "Managers") {
+                            $("#ApprovalComments_Manager").show();
+                            $("#lbl_approval").show();
+                         
+                        }
+                        if (data.d.results[i].Title == "Admin") {
+                            $("#ApprovalComments_Admin").show();
+                            $("#lbl_process").show();
+                        }
+
+                        //console.log(data.d.results); 
+                    }
+                }
+                else
+                {
+                   // alert("User Not in the Groups");
+                }
+            }
+        });
+
+    }
+
+    function WF_Approvalhideshow() {
+       
+        $.ajax
+          ({
+              url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listWFDisplayName + "')/Items?$select=Title,Status,AssignedTo/Id,AssignedTo/Title&$expand=AssignedTo&$filter=AssignedTo/Title eq '" + CurrentUserName + "' and Status eq 'Not Started'",
+        method: "GET",
+         async: false,
+        headers: { "Accept": "application/json; odata=verbose" },
+        success: function (data) {
+            if (data.d != null) {
+            
+                $("#Approval_hideShow").show();
+                
+            }
+            
+        }
+    });
+    }
+
+
+    function Approvalitems() {
+        var requesturl = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listWFDisplayName + "')/Items?$select=ID,Title,RelatedItems&$filter=Status eq 'Not Started'";
+        $.ajax                                                
+              ({
+            url: requesturl,
+            method: "GET",
+            async: false,
+            headers: { "Accept": "application/json; odata=verbose" },
+            success: function (data) {
+                if (data.d != null) {
+
+                    for (var i = 0; i < data.d.results.length; i++)
+                        {
+                    var obj = JSON.parse(data.d.results[i].RelatedItems)
+                    if (obj.length > 0) {
+                        for (var t = 0; t < obj.length; t++) {
+                            if (querystrings == obj[t].ItemId) {
+
+                                alert(data.d.results[i].ID);
+                                WF_Approvalitems(data.d.results[i].ID);
+
+                            }
+
+                        }
+                    }
+                    }
+                }
+
+            }
+        });
+
+
+    }
+
+    function WF_Approvalitems(updateID) {
+
+            var requestUri = "";
+            var Header_Body = "";
+            requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listWFDisplayName + "')/Items("+updateID+")";
+
+            Header_Body = {
+                "Accept": "application/json;odata=verbose",
+                "content-type": "application/json; odata=verbose",
+                "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+                "X-HTTP-Method": "MERGE",
+                "If-Match": "*"
+            }
+            var itemtype = "SP.Data.WorkflowTasksItem";
+            $.ajax(
+                   {
+                       url: requestUri,
+                       async: false,
+                       type: "POST",
+                       data: JSON.stringify({
+                           '__metadata': { 'type': itemtype },
+                           'Status': Status_Completed,
+                           'TaskOutcome': Taskovercome_completed
+                       }),
+                       headers: Header_Body,
+                       success: function (data) {     
+                       alert("Item Updated")                
+                       },
+                       error: function (err) {
+                           console.log("WF List Item Error Message: " + JSON.stringify(err));
+                       }
+                   });
+    }
+
+
+    //function WF_DataFilter() {
+    //    var requesturl =_spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listWFDisplayName + "')/Items?$select=Title,ID,Status,AssignedTo/Id,AssignedTo/Title&$expand=AssignedTo&$filter=AssignedTo/Title eq '" + CurrentUserName + "' and Status eq 'Not Started' and ITRequestID eq '"+querystrings+"'";
+    //    $.ajax
+    //      ({
+    //          url: requesturl,
+    //    method: "GET",
+    //     async: false,
+    //    headers: { "Accept": "application/json; odata=verbose" },
+    //    success: function (data) {
+    //        if (data.d != null) {
+            
+    //           alert(data.d.results[0].ID);
+    //            WF_DataUpdate(data.d.results[0].ID);
+    //        }
+            
+    //    }
+    //});
+
+
+    //}
+
+
+
+    //function WF_DataUpdate(updateID) {
+    //    var requestUri = "";
+    //    var Header_Body = "";
+    //    requestUri = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listWFDisplayName + "')/Items("+updateID+")";
+        
+    //    Header_Body = {
+    //        "Accept": "application/json;odata=verbose",
+    //        "content-type": "application/json; odata=verbose",
+    //        "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+    //        "X-HTTP-Method": "MERGE",
+    //        "If-Match": "*"
+    //    }
+    //    var itemtype = "SP.Data.WorkflowTasksItem";
+    //    $.ajax(
+    //           {
+    //               url: requestUri,
+    //               async: false,
+    //               type: "POST",
+    //               data: JSON.stringify({
+    //                   '__metadata': { 'type': itemtype },
+    //                   'Status': Status_WF
+    //               }),
+    //               headers: Header_Body,
+    //               success: function (data) {     
+    //               alert("Item Updated")                
+    //               },
+    //               error: function (err) {
+    //                   console.log("WF List Item Error Message: " + JSON.stringify(err));
+    //               }
+    //           });
+    //}
+
+</script>
